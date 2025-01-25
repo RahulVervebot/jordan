@@ -1,0 +1,85 @@
+.quickLinks {
+  margin: 0;
+  width: 141px;
+  height: 29px;
+  position: relative;
+  font-size: inherit;
+  font-weight: 700;
+  font-family: inherit;
+  display: inline-block;
+  flex-shrink: 0;
+}
+.aboutUs {
+  text-decoration: none;
+  width: 82px;
+  height: 50px;
+  position: relative;
+  line-height: 50px;
+  color: inherit;
+  display: inline-block;
+}
+.compare {
+  text-decoration: none;
+  width: 89px;
+  height: 50px;
+  position: relative;
+  line-height: 50px;
+  color: inherit;
+  display: inline-block;
+}
+.contactUs {
+  text-decoration: none;
+  width: 102px;
+  height: 50px;
+  position: relative;
+  line-height: 50px;
+  color: inherit;
+  display: inline-block;
+}
+.legalNotice {
+  width: 113px;
+  height: 50px;
+  position: relative;
+  line-height: 50px;
+  display: inline-block;
+}
+.legalNotice1 {
+  position: relative;
+  line-height: 50px;
+  display: none;
+}
+.links {
+  height: 200px;
+  width: 183px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.linksWrapper {
+  width: 136px;
+  height: 200px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0px 0px 0px 13px;
+  box-sizing: border-box;
+  font-size: 18px;
+}
+.columnWithLinksFooter {
+  height: 267px;
+  width: 136px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0px 0px 17px 0px;
+  box-sizing: border-box;
+  gap: 21px;
+  z-index: 4;
+  text-align: left;
+  font-size: 24px;
+  color: #fff;
+  font-family: Montserrat;
+}

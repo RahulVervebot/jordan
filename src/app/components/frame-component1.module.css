@@ -1,0 +1,82 @@
+.maskGroupIcon {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  object-fit: cover;
+}
+.nestedShippingMask {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 7px 0px 0px;
+}
+.freeShipping {
+  position: relative;
+  display: inline-block;
+  min-width: 128px;
+}
+.onAllOrders {
+  position: relative;
+  z-index: 1;
+}
+.shippingOptions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.nestedShippingMaskParent {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 22px;
+}
+.paymentSecure {
+  position: relative;
+}
+.frameGroup {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 22px;
+}
+.support247 {
+  position: relative;
+  display: inline-block;
+  min-width: 120px;
+}
+.frameParent {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 78px;
+  max-width: 100%;
+}
+.frameWrapper {
+ justify-items: center;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0px 52px;
+  box-sizing: border-box;
+  max-width: 100%;
+  text-align: left;
+  font-size: 18px;
+  color: #000;
+  font-family: Poppins;
+}
+
+@media screen and (max-width: 1400px) {
+  .frameParent {
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 450px) {
+  .nestedShippingMaskParent {
+    flex-wrap: wrap;
+  }
+}
