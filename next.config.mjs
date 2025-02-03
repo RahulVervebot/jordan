@@ -5,7 +5,7 @@ const nextConfig = {
     images: {
         domains: ['via.placeholder.com'],
       },
-      output: 'export',
+     // output: 'export',
 
 };
 
