@@ -89,7 +89,7 @@ const Register = () => {
                     className="border-line px-4 pt-3 pb-3 w-full rounded-lg"
                     id="firstname"
                     type="text"
-                    placeholder="First name *"
+                    placeholder="Password *"
                     required
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
@@ -101,7 +101,7 @@ const Register = () => {
                     className="border-line px-4 pt-3 pb-3 w-full rounded-lg"
                     id="lastname"
                     type="text"
-                    placeholder="Last name *"
+                    placeholder="Confirm Password*"
                     required
                     value={cfpassword}
                     onChange={(e) => setCfPassword(e.target.value)}
@@ -113,7 +113,7 @@ const Register = () => {
                     className="border-line px-4 pt-3 pb-3 w-full rounded-lg"
                     id="mobile"
                     type="text"
-                    placeholder="Mobile number *"
+                    placeholder="OTP *"
                     required
                     value={otp}
                     onChange={(e) => setOtp(e.target.value)}
