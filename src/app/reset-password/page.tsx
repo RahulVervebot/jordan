@@ -11,13 +11,13 @@ import { useRouter } from 'next/navigation'
 const Register = () => {
   const router = useRouter()
 
-  // 1. Add state for each input
+  // State for form inputs
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [cfpassword, setCfPassword] = useState('')
+  const [passwordConfirmation, setPasswordConfirmation] = useState('')  // Renamed for clarity
   const [otp, setOtp] = useState('')
 
-  // 2. Handle registration
+  // Handle registration
   const handleRegister = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
@@ -30,23 +30,18 @@ const Register = () => {
         body: JSON.stringify({
           email,
           password,
-          cfpassword,
+          password_confirmation: passwordConfirmation,  // Updated field name
           otp,
         })
       })
 
       if (!response.ok) {
-        // You can show an error toast or message here
-        alert('Registration failed. Please check your details and try again.')
+        const errorData = await response.json()
+        alert(`Registration failed: ${errorData.message || 'Please check your details and try again.'}`)
         return
       }
 
-      // If successful, decide where to go next (e.g. /login)
-      // Optionally, you can parse JSON to see the response
-      // const data = await response.json()
-      // console.log('Registration success:', data)
-
-      alert('Registration successful! Redirecting to login page...')
+      alert('Password reset successful! Redirecting to login page...')
       router.push('/login')
     } catch (error) {
       console.error('Registration error:', error)
@@ -56,7 +51,7 @@ const Register = () => {
 
   return (
     <>
-      <TopNavOne props="style-one bg-black" slogan="Welcome to Jordan. We provides best IT Electronics item" />
+      <TopNavOne props="style-one bg-black" slogan="Welcome to Jordan. We provide the best IT Electronics items" />
       <div id="header" className='relative w-full'>
         <MenuOne props="bg-transparent" />
         <Breadcrumb heading='Reset Your Password' subHeading='reset-password' />
@@ -67,17 +62,13 @@ const Register = () => {
             <div className="left md:w-1/2 w-full lg:pr-[60px] md:pr-[40px] md:border-r border-line">
               <div className="heading4">Reset Password</div>
 
-              {/* 
-                  3. Hook up form to handleRegister 
-                  (Don't change the layout — just add onSubmit & state bindings)
-              */}
               <form className="md:mt-7 mt-4" onSubmit={handleRegister}>
                 <div className="email">
                   <input
                     className="border-line px-4 pt-3 pb-3 w-full rounded-lg"
-                    id="username"
+                    id="email"
                     type="email"
-                    placeholder="Username or email address *"
+                    placeholder="Email address *"
                     required
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
@@ -87,9 +78,9 @@ const Register = () => {
                 <div className="pass mt-5">
                   <input
                     className="border-line px-4 pt-3 pb-3 w-full rounded-lg"
-                    id="firstname"
-                    type="text"
-                    placeholder="Password *"
+                    id="password"
+                    type="password"
+                    placeholder="New Password *"
                     required
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
@@ -99,19 +90,19 @@ const Register = () => {
                 <div className="pass mt-5">
                   <input
                     className="border-line px-4 pt-3 pb-3 w-full rounded-lg"
-                    id="lastname"
-                    type="text"
-                    placeholder="Confirm Password*"
+                    id="passwordConfirmation"
+                    type="password"
+                    placeholder="Confirm New Password *"
                     required
-                    value={cfpassword}
-                    onChange={(e) => setCfPassword(e.target.value)}
+                    value={passwordConfirmation}
+                    onChange={(e) => setPasswordConfirmation(e.target.value)}
                   />
                 </div>
 
-                <div className="pass mt-5">
+                <div className="otp mt-5">
                   <input
                     className="border-line px-4 pt-3 pb-3 w-full rounded-lg"
-                    id="mobile"
+                    id="otp"
                     type="text"
                     placeholder="OTP *"
                     required
@@ -126,19 +117,20 @@ const Register = () => {
                       type="checkbox"
                       name='remember'
                       id='remember'
+                      required
                     />
                     <Icon.CheckSquare size={20} weight='fill' className='icon-checkbox' />
                   </div>
                   <label htmlFor='remember' className="pl-2 cursor-pointer text-secondary2">
                     I agree to the
                     <Link href={'#!'} className='text-black hover:underline pl-1'>
-                      Terms of User
+                      Terms of Use
                     </Link>
                   </label>
                 </div>
 
                 <div className="block-button md:mt-7 mt-4">
-                  <button className="button-main">Submit</button>
+                  <button className="button-main" type="submit" style={{backgroundColor: "#000"}}>Submit</button>
                 </div>
               </form>
             </div>
@@ -147,8 +139,7 @@ const Register = () => {
               <div className="text-content">
                 <div className="heading4">Already have an account?</div>
                 <div className="mt-2 text-secondary">
-                  Welcome back. Sign in to access your personalized experience, saved preferences, and more.
-                  We{"'"}re thrilled to have you with us again!
+                  Welcome back! Sign in to access your personalized experience, saved preferences, and more.
                 </div>
                 <div className="block-button md:mt-7 mt-4">
                   <Link href={'/login'} className="button-main">Login</Link>
