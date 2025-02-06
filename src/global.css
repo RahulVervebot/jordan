@@ -1,0 +1,15 @@
+.swiper-wrapper {
+    margin-top: 5%;
+}
+@media (max-width: 768px) {
+    .swiper-wrapper {
+        margin-top: 10%;
+    }
+
+}
+@media (max-width: 480px) {
+    .swiper-wrapper {
+        margin-top: 15%;
+    }
+
+}
