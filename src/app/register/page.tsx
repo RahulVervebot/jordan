@@ -7,6 +7,7 @@ import Breadcrumb from '@/components/Breadcrumb/Breadcrumb'
 import Footer from '@/components/Footer/Footer'
 import * as Icon from "@phosphor-icons/react/dist/ssr";
 import { useRouter } from 'next/navigation'
+import { error } from 'console'
 
 const Register = () => {
   const router = useRouter()
@@ -36,7 +37,7 @@ const Register = () => {
           mobile
         })
       })
-
+console.log("register responsex",response);
       if (!response.ok) {
         // You can show an error toast or message here
         alert('Registration failed. Please check your details and try again.')

@@ -37,14 +37,15 @@ const MenuOne: React.FC<Props> = ({ props }) => {
 
     const [fixedHeader, setFixedHeader] = useState(false)
     const [lastScrollPosition, setLastScrollPosition] = useState(0);
-
+    const [token, setToken] = useState<string | null>(null);
     useEffect(() => {
+        const localToken = localStorage.getItem("access_token");
+        setToken(localToken);
         const handleScroll = () => {
             const scrollPosition = window.scrollY;
             setFixedHeader(scrollPosition > 0 && scrollPosition < lastScrollPosition);
             setLastScrollPosition(scrollPosition);
         };
-
         // Gắn sự kiện cuộn khi component được mount
         window.addEventListener('scroll', handleScroll);
 
@@ -1120,10 +1121,14 @@ const MenuOne: React.FC<Props> = ({ props }) => {
                                         className={`login-popup absolute top-[74px] w-[320px] p-7 rounded-xl bg-white box-shadow-sm 
                                             ${openLoginPopup ? 'open' : ''}`}
                                     >
+                                           {!token && (
+                                        <div className="login-register-pop">
                                         <Link href={'/login'} className="button-main w-full text-center">Login</Link>
                                         <div className="text-secondary text-center mt-3 pb-4">Don’t have an account?
                                             <Link href={'/register'} className='text-black pl-1 hover:underline'>Register</Link>
+                                            </div>
                                         </div>
+                                          )}
                                         <Link href={'/my-account'} className="button-main bg-white text-black border border-black w-full text-center">Dashboard</Link>
                                         <div className="bottom mt-4 pt-4 border-t border-line"></div>
                                         <Link href={'#!'} className='body1 hover:underline'>Support</Link>
@@ -2164,5 +2169,4 @@ const MenuOne: React.FC<Props> = ({ props }) => {
         </>
     )
 }
-
 export default MenuOne

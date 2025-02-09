@@ -28,7 +28,7 @@ const Login = () => {
                     password
                 })
             });
-
+console.log(response, 'response');
             if (!response.ok) {
                 // Handle error
                 alert("Login failed. Please check your credentials.");
