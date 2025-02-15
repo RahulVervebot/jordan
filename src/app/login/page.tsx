@@ -7,6 +7,7 @@ import Breadcrumb from '@/components/Breadcrumb/Breadcrumb'
 import Footer from '@/components/Footer/Footer'
 import * as Icon from "@phosphor-icons/react/dist/ssr";
 import { useRouter } from 'next/navigation'
+import { error } from 'console'
 
 const Login = () => {
     const router = useRouter();
@@ -28,7 +29,7 @@ const Login = () => {
                     password
                 })
             });
-console.log(response, 'response');
+           console.log(response, 'response');
             if (!response.ok) {
                 // Handle error
                 alert("Login failed. Please check your credentials.");
@@ -121,7 +122,7 @@ console.log(response, 'response');
                                     <Link href={'/forgot-password'} className='font-semibold hover:underline'>Forgot Your Password?</Link>
                                 </div>
                                 <div className="block-button md:mt-7 mt-4">
-                                    <button className="button-main">Login</button>
+                                    <button className="button-main" style={{backgroundColor: "#0D81C7", color: "#fff", border:"none"}}>Login</button>
                                 </div>
                             </form>
                         </div>
@@ -130,7 +131,7 @@ console.log(response, 'response');
                                 <div className="heading4">New Customer</div>
                                 <div className="mt-2 text-secondary">Be part of our growing family of new customers! Join us today and unlock a world of exclusive benefits, offers, and personalized experiences.</div>
                                 <div className="block-button md:mt-7 mt-4">
-                                    <Link href={'/register'} className="button-main">Register</Link>
+                                    <Link href={'/register'} className="button-main" style={{backgroundColor: "#0D81C7", color: "#fff", border:"none"}}>Register</Link>
                                 </div>
                             </div>
                         </div>

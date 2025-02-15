@@ -12,7 +12,6 @@ import { useRouter } from 'next/navigation'
 
 const MyAccount = () => {
     const router = useRouter();
-
     const [activeTab, setActiveTab] = useState<string | undefined>('dashboard')
     const [activeAddress, setActiveAddress] = useState<string | null>('billing')
     const [activeOrders, setActiveOrders] = useState<string | undefined>('all')
@@ -24,17 +23,14 @@ const MyAccount = () => {
         const token = localStorage.getItem('access_token');
         const userData = localStorage.getItem('user_info');
         const expiresIn = localStorage.getItem('expires_in');
-
         // If there's no token, redirect immediately
         if (!token) {
             router.push('/login');
             return;
         }
-
         // (Optional) Basic expiration check:
         // If you previously stored "expires_at" in localStorage (like Date.now() + expires_in * 1000),
         // you could compare it here. If expired, push to /login.
-
         // Else parse user info
         if (userData) {
             try {
@@ -57,15 +53,12 @@ const MyAccount = () => {
         localStorage.removeItem('user_info');
         router.push('/login');
     };
-
     const handleActiveAddress = (order: string) => {
         setActiveAddress(prevOrder => prevOrder === order ? null : order)
     }
-
     const handleActiveOrders = (order: string) => {
         setActiveOrders(order)
     }
-
     return (
         <>
             <TopNavOne props="style-one bg-black" slogan="Welcome to Jordan. We provides best IT Electronics item" />
@@ -790,5 +783,4 @@ const MyAccount = () => {
         </>
     )
 }
-
 export default MyAccount

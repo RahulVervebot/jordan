@@ -1,5 +1,5 @@
 .swiper-wrapper {
-    margin-top: 5%;
+    margin-top: 10%;
 }
 @media (max-width: 768px) {
     .swiper-wrapper {
@@ -12,4 +12,10 @@
         margin-top: 15%;
     }
 
+}
+
+.button-main{
+    background-color: #0D81C7;
+    color: #fff;
+    border: none;
 }

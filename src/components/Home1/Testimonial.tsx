@@ -17,7 +17,7 @@ const Testimonial: React.FC<Props> = ({ data, limit }) => {
         <>
             <div className="testimonial-block md:py-20 py-10 bg-surface">
                 <div className="container">
-                    <div className="heading3 text-center">
+                    <div className="heading3 text-left">
                         What People Are Saying
                     </div>
 

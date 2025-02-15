@@ -24,7 +24,7 @@ const WhatNewOne: React.FC<Props> = ({ data, start, limit }) => {
         <>
             <div className="whate-new-block md:pt-20 pt-10">
                 <div className="container">
-                    <div className="heading flex flex-col items-center text-center">
+                    <div className="heading flex flex-col items-left text-left">
                         <div className="heading3">Hot New Arrival you May Like</div>
                         <div className="menu-tab flex items-center gap-2 p-1 bg-surface rounded-2xl mt-6">
                             {['tablet', 'desktop', 'laptop', 'printer', 'server'].map((type) => (

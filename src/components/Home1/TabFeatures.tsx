@@ -46,7 +46,7 @@ const TabFeatures: React.FC<Props> = ({ data, start, limit }) => {
         <>
             <div className="tab-features-block md:pt-20 pt-10">
                 <div className="container">
-                    <div className="heading flex flex-col items-center text-center">
+                    <div className="heading flex flex-col items-left text-left">
                         <div className="menu-tab flex items-center gap-2 p-1 bg-surface rounded-2xl">
                             {['best sellers', 'on sale', 'new arrivals'].map((item, index) => (
                                 <div

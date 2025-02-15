@@ -153,7 +153,7 @@ console.log("register responsex",response);
                 </div>
 
                 <div className="block-button md:mt-7 mt-4">
-                  <button className="button-main">Register</button>
+                  <button className="button-main" style={{backgroundColor: "#0D81C7", color: "#fff", border:"none"}}>Register</button>
                 </div>
               </form>
             </div>
@@ -166,7 +166,7 @@ console.log("register responsex",response);
                   We{"'"}re thrilled to have you with us again!
                 </div>
                 <div className="block-button md:mt-7 mt-4">
-                  <Link href={'/login'} className="button-main">Login</Link>
+                  <Link href={'/login'} className="button-main" style={{backgroundColor: "#0D81C7", color: "#fff", border:"none"}}>Login</Link>
                 </div>
               </div>
             </div>
