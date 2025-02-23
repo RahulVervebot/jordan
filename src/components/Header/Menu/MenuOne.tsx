@@ -15,6 +15,8 @@ import { useModalSearchContext } from '@/context/ModalSearchContext';
 import { useCart } from '@/context/CartContext';
 import { useRouter } from 'next/navigation';
 import Logo from '../../../../public/images/jodern-logo.png'
+import Dropdown, { DropdownOption } from '../../../components/Dropdown';
+
 import MenuMid from '@/components/Header/Menu/MenuMid'
 interface Props {
     props: string;
@@ -35,7 +37,14 @@ const MenuOne: React.FC<Props> = ({ props }) => {
     const handleOpenSubNavMobile = (index: number) => {
         setOpenSubNavMobile(openSubNavMobile === index ? null : index)
     }
-
+    const dropdownOptions: DropdownOption[] = [
+        { value: 'Desktop', label: 'Desktop' },
+        { value: 'Mobile', label: 'Mobile' },
+        { value: 'Laptop', label: 'Laptop' },
+      ];
+    
+      // State to track the selected dropdown value
+      const [selectedFood, setSelectedFood] = useState<string>('');
     const [fixedHeader, setFixedHeader] = useState(false)
     const [lastScrollPosition, setLastScrollPosition] = useState(0);
     const [token, setToken] = useState<string | null>(null);
@@ -78,7 +87,7 @@ const MenuOne: React.FC<Props> = ({ props }) => {
                         <div className="menu-mobile-icon lg:hidden flex items-center" onClick={handleMenuMobile}>
                             <i className="icon-category text-2xl"></i>
                         </div>
-                        <div className="left flex items-center gap-16">
+                        <div className="left flex items-center gap-16" style={{width:"70%"}}>
                             <Link href={'/'} className='flex items-center max-lg:absolute max-lg:left-1/2 max-lg:-translate-x-1/2'>
                                 <div className="heading4">  <Image
                                                                 src={Logo}
@@ -88,16 +97,27 @@ const MenuOne: React.FC<Props> = ({ props }) => {
                                                                 
                                                             /></div>
                             </Link>
-                            <div className="menu-main h-full max-lg:hidden" style={{marginTop:"3%"}}>
+                        <div className="menu-main h-full max-lg:hidden" style={{marginTop:"3%",width:"80%" }}>
+                        <ul className='flex items-center gap-8 h-full'>
+                        <li> <Dropdown
+        options={dropdownOptions}
+        selectedValue={selectedFood}
+        onChange={(value) => setSelectedFood(value)}
+      /></li>
+                        <li className='h-full' style={{width:"80%"}}>
+                        <div className="form-search relative">
+                        <Icon.MagnifyingGlass
+                       className='absolute heading5 right-6 top-1/2 -translate-y-1/2 cursor-pointer'
+                       />
                             <input
                             type="text"
-                            placeholder='Searching...'
-                            className='text-button-lg h-14 rounded-2xl border border-line w-full pl-6 pr-12'
+                            placeholder='Search For Product...'
+                            className='text-button-lg h-14 rounded-2xl w-full pl-6 pr-12'
                        
-                        /> 
-                    
-
-                                
+                        />
+                        </div>
+                        </li>
+                        </ul>
                             </div>
                         </div>
                         <div className="right flex gap-12">
