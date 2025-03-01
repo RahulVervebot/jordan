@@ -140,9 +140,9 @@ const Footer = () => {
                         </div>
                         <div className="footer-bottom py-3 flex items-center justify-between gap-5 max-lg:justify-center max-lg:flex-col border-t border-line">
                             <div className="left flex items-center gap-8">
-                                <div className="copyright caption1 bg-surface-footer">©2023 Jordan. All Rights Reserved.</div>
+                                <div className="copyright caption1 bg-surface-footer">©2025 Jordan. All Rights Reserved.</div>
                                 <div className="select-block flex items-center gap-5 max-md:hidden">
-                                    <div className="choose-language flex items-center gap-1.5">
+                                    {/* <div className="choose-language flex items-center gap-1.5">
                                         <select name="language" id="chooseLanguageFooter" className='caption2 bg-transparent'>
                                             <option value="English">English</option>
                                             <option value="Espana">Espana</option>
@@ -157,7 +157,7 @@ const Footer = () => {
                                             <option value="GBP">GBP</option>
                                         </select>
                                         <Icon.CaretDown size={12} color='#1F1F1F' />
-                                    </div>
+                                    </div> */}
                                 </div>
                             </div>
                             <div className="right flex items-center gap-2">
