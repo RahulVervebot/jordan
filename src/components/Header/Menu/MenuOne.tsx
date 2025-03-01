@@ -81,7 +81,7 @@ const MenuOne: React.FC<Props> = ({ props }) => {
     return (
         <>
            <MenuMid props="bg-transparent" />
-            <div className={`header-menu style-one ${fixedHeader ? 'fixed' : 'absolute'} top-0 left-0 right-0 w-full md:h-[74px] h-[56px] ${props}`}>
+            <div className={`header-menu style-one ${fixedHeader ? 'fixed' : 'absolute'} top-0 left-0 right-0 w-full h-[56px] ${props}`}>
                 <div className="container mx-auto h-full">
                     <div className="header-main flex justify-between h-full">
                         <div className="menu-mobile-icon lg:hidden flex items-center" onClick={handleMenuMobile}>
@@ -97,9 +97,10 @@ const MenuOne: React.FC<Props> = ({ props }) => {
                                                                 
                                                             /></div>
                             </Link>
-                        <div className="menu-main h-full max-lg:hidden" style={{marginTop:"3%",width:"80%" }}>
-                        <ul className='flex items-center gap-8 h-full'>
-                        <li> <Dropdown
+                        <div className="menu-main h-full max-lg:hidden" style={{width:"80%" }}>
+                        <ul className='flex items-center gap-8 h-full' style={{background: "#f9f9f9", color:"#b9b9b9",borderRadius:"50px", padding:"10",margin:"1%"}}>
+                        <li style={{padding: "0 2%", borderRight:"1px solid"}}>
+                             <Dropdown
         options={dropdownOptions}
         selectedValue={selectedFood}
         onChange={(value) => setSelectedFood(value)}
@@ -112,7 +113,7 @@ const MenuOne: React.FC<Props> = ({ props }) => {
                             <input
                             type="text"
                             placeholder='Search For Product...'
-                            className='text-button-lg h-14 rounded-2xl w-full pl-6 pr-12'
+                            className='text-button-lg h-14 rounded-2xl w-full pl-6 pr-12' style={{backgroundColor:"#f9f9f9"}}
                        
                         />
                         </div>
