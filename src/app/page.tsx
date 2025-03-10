@@ -14,8 +14,9 @@ import Instagram from '@/components/Home1/Instagram'
 import Brand from '@/components/Home1/Brand'
 import Footer from '@/components/Footer/Footer'
 import ModalNewsletter from '@/components/Modal/ModalNewsletter'
+import LatestProducts from '@/components/LatestProducts'
 
-export default function Home() {
+export default async function HomePage() {
   return (
     <>
       <TopNavOne props="style-one bg-blue" slogan="Welcome to Jordan. We provides best IT Electronics item" />
@@ -27,6 +28,7 @@ export default function Home() {
       <WhatNewOne data={productData} start={0} limit={4} />
       <Collection />
       <TabFeatures data={productData} start={0} limit={6} />
+     <LatestProducts/>
       <Banner />
       <Testimonial data={testimonialData} limit={6} />
       <Instagram />
